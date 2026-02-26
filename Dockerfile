@@ -14,12 +14,13 @@ FROM node:22-alpine AS builder
 WORKDIR /build
 COPY . .
 
+ENV CI=true
 RUN if [ ! -f compiled/build-manifest.json ]; then \
       apk add --no-cache python3 make g++ git && \
       corepack enable && \
       corepack prepare pnpm@10.22.0 --activate && \
       pnpm install --frozen-lockfile && \
-      CI=true N8N_SKIP_LICENSES=true node scripts/build-n8n.mjs; \
+      N8N_SKIP_LICENSES=true node scripts/build-n8n.mjs; \
     fi
 
 # ==============================================================================
