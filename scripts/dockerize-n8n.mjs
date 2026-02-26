@@ -121,7 +121,7 @@ const rootDir = isInScriptsDir ? path.join(__dirname, '..') : __dirname;
 
 const config = {
 	n8n: {
-		dockerfilePath: path.join(rootDir, 'docker/images/n8n/Dockerfile'),
+		dockerfilePath: path.join(rootDir, 'Dockerfile'),
 		imageBaseName: process.env.IMAGE_BASE_NAME || 'n8nio/n8n',
 		imageTag: process.env.IMAGE_TAG || 'local',
 		get fullImageName() {

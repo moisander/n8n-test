@@ -220,7 +220,7 @@ If your build server (e.g. Railway, Render, Coolify) runs `docker build`
 directly, no pre-build step is needed. The Dockerfile handles everything:
 
 ```bash
-docker build -t n8n-custom -f docker/images/n8n/Dockerfile .
+docker build -t n8n-custom .
 ```
 
 The builder stage detects that `compiled/` is missing and performs a full build
