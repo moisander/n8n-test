@@ -1,6 +1,11 @@
 #!/bin/sh
 set -e
 
+# Map Aiven's PORT to n8n's N8N_PORT if not already set
+if [ -n "$PORT" ] && [ -z "$N8N_PORT" ]; then
+  export N8N_PORT="$PORT"
+fi
+
 # Parse DATABASE_URL (postgresql://user:pass@host:port/dbname?params) into
 # the individual env vars that n8n expects.
 if [ -n "$DATABASE_URL" ]; then
