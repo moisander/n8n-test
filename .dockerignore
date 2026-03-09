@@ -18,6 +18,9 @@
 !packages/@n8n/task-runner-python
 !packages/@n8n/task-runner-python/**
 
+# === Aiven App Runtime (root Dockerfile) ===
+!entrypoint.sh
+
 # === Docker build files (entrypoints, configs) ===
 !docker
 !docker/images
