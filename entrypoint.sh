@@ -29,7 +29,10 @@ if [ -n "$DATABASE_URL" ]; then
 
   # Enable SSL if the URL contains sslmode=require
   case "$DATABASE_URL" in
-    *sslmode=require*) export DB_POSTGRESDB_SSL_ENABLED=true ;;
+    *sslmode=require*)
+      export DB_POSTGRESDB_SSL_ENABLED=true
+      export DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false
+      ;;
   esac
 
   echo "Parsed DATABASE_URL -> host=$DB_POSTGRESDB_HOST port=$DB_POSTGRESDB_PORT db=$DB_POSTGRESDB_DATABASE user=$DB_POSTGRESDB_USER ssl=$DB_POSTGRESDB_SSL_ENABLED"
