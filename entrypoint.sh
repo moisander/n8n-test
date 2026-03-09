@@ -50,8 +50,5 @@ if [ -n "$missing" ]; then
   exit 1
 fi
 
-echo "Running n8n database migrations..."
-n8n db:migrate
-
-echo "Starting n8n..."
+echo "Starting n8n (migrations run automatically)..."
 exec n8n start
